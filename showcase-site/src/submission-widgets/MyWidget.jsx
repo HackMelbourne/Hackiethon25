@@ -23,7 +23,8 @@ const MyWidget = () => {
           </button>
         </div>
       </div>
-      <ProgressBar color="Red" />
+      <ProgressBar color="firebrick" />
+      <ProgressBar color="limegreen" />
     </div>
   );
 };
