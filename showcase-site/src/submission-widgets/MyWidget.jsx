@@ -30,37 +30,39 @@ const MyWidget = () => {
 };
 
 const ProgressBar = (props) => {
-  // const colors = {
-  //   5: "darkred",
-  //   10: "firebrick",
-  //   20: "darkorange",
-  //   40: "orange",
-  //   60: "gold",
-  //   80: "olivedrab",
-  //   100: "limegreen",
-  // }
+  const colors = {
+    5: "darkred",
+    10: "firebrick",
+    20: "darkorange",
+    40: "orange",
+    60: "gold",
+    80: "olivedrab",
+    100: "limegreen",
+  }
   const [progress, setProgress] = useState(0);
-  const [color, setColor] = useState("limegreen");
+  const [color, setColor] = useState("limegreen"); // Default xp bar colour
 
-  const addProgress = () => {
-    if (progress >= 90) {
+  const updateProgress = () => {
+    // Modify if needed
+    if (progress == 100) {
+      setProgress(0);
+    } else if (progress >= 90) {
       setProgress(100);
     } else {
       setProgress(progress+10);
     }
+
+    // Manages colour of hp bar
+    if (props.type == 'hp') {
+      for (let i in colors) {
+        if (progress <= i) {
+          setColor(colors[i]);
+          break
+        }
+      }
+    }
   }
-  const resetProgress = () => setProgress(0);
 
-
-  // if (props.type == 'hp') {
-  //   for (i in colors.keys) {
-  //     if (progress <= i) {
-  //       setColor(colors[i]);
-  //       alert(`Set color to ${color}.`)
-  //       break
-  //     }
-  //   }
-  // }
 
   return (
     <div>
@@ -74,8 +76,7 @@ const ProgressBar = (props) => {
         ></div>
       </div>
       {/* Remove later */}
-      <button className="bg-red-100" onClick={addProgress}>Increase</button>
-      <button className="bg-red-100" onClick={resetProgress}>Reset</button>
+      <button className="bg-red-100" onClick={updateProgress}>Change</button>
     </div>
   )
 }
