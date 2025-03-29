@@ -30,15 +30,28 @@ const MyWidget = () => {
 
 const ProgressBar = (props) => {
   const [progress, setProgress] = useState(0);
+  const addProgress = () => {
+    if (progress >= 90) {
+      setProgress(100);
+    } else {
+      setProgress(progress+10);
+    }
+  }
+  const resetProgress = () => setProgress(0);
   return (
-    <div className="size-100% bg-gray-200 rounded-full h-4 block mt-4 mb-4"> 
-    <div 
-      className="rounded-full h-10 transition-all duration-500"
-      style={{
-              width: `${progress}%`,
-              color: props.color
-            }}
-    ></div>
+    <div>
+      <div className="size-100% bg-gray-200 rounded-full h-4 block mt-4 mb-4"> 
+        <div 
+          className="rounded-full h-full transition-all duration-500"
+          style={{
+                  width: `${progress}%`,
+                  background: props.color,
+                }}
+        ></div>
+      </div>
+      {/* Remove later */}
+      <button className="bg-red-100" onClick={addProgress}>Increase</button>
+      <button className="bg-red-100" onClick={resetProgress}>Reset</button>
     </div>
   )
 }
