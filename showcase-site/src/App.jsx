@@ -17,7 +17,6 @@ function App() {
     )
   }
 
-
   return (
     <div className="App" style={{ backgroundImage: 'url(/stars.png)', height: '100vh' }}>
         <Navbar />
