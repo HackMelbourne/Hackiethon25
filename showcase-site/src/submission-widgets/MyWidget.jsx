@@ -4,6 +4,8 @@ import { TiStarFullOutline } from "react-icons/ti";
 
 const MyWidget = () => {
   const [level, setLevel] = useState(0)
+  const [hp, setHp] = useState(100)
+  const [xp, setXp] = useState(0)
   const [habits, setHabits] = useState(["Test Habit"])
 
   //Tracks the habit that is currently being edited (null if none are being edited)
@@ -36,6 +38,23 @@ const MyWidget = () => {
     }
   }
 
+  const changeHp = () => {
+    if (hp >= 10) {
+      setHp(hp - 10);
+    } else {
+      setHp(100);
+    }
+  }
+
+  const changeXp = () => {
+    if (xp <= 90) {
+      setXp(xp + 10);
+    } else {
+      setXp(0);
+      levelUp();
+    }
+  }
+
   return (
     <div className="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg">
       <div className="text-center space-y-4">
@@ -52,8 +71,10 @@ const MyWidget = () => {
           </div>
         </div>
       </div>
-      <ProgressBar type="hp" level={level} />
-      <ProgressBar type="xp" level={level} />
+      <ProgressBar type="hp" level={level} progress={hp} />
+      <ProgressBar type="xp" level={level} progress={xp} />
+      <button className="bg-red-100" onClick={changeHp}>Change hp</button>
+      <button className="bg-red-100" onClick={changeXp}>Change xp</button>
       <p>Level: {level}</p>
       <button className="bg-red-100" onClick={levelUp}>Increase level</button>
     </div>
@@ -83,48 +104,40 @@ const ProgressBar = (props) => {
     "red",
     "red",
   ]
-  const [progress, setProgress] = useState(0);
-  const [color, setColor] = useState("blue"); // Error
 
-  const updateProgress = () => {
-    // Modify if needed
-    if (progress == 100) {
-      setProgress(0);
-    } else if (progress >= 90) {
-      setProgress(100);
-    } else {
-      setProgress(progress+10);
-    }
-
-    // Manages colour of hp bar
+  const getHpColor = () => {
     if (props.type == 'hp') {
       for (let i in hpcolors) {
-        if (progress <= i) {
-          setColor(hpcolors[i]);
-          break
+        if (props.progress <= i) {
+          return hpcolors[i];
         }
       }
-    } else {
-      console.log(`level is ${props.level}`)
-      setColor(xpcolors[props.level]);
-      console.log(`set colour to ${color}`)
     }
   }
 
+  // const updateProgress = () => {
+  //   // Modify if needed
+  //   if (progress == 100) {
+  //     setProgress(0);
+  //   } else if (progress >= 90) {
+  //     setProgress(100);
+  //   } else {
+  //     setProgress(progress+10);
+  //   }
+  // }
+
   return (
-    <div className="block mt-4 mb-4">
+    <div className="block mt-4 mb-4 w-full">
       {props.type == "hp" ? <TiHeartFullOutline /> : <TiStarFullOutline />}
-      <div className="size-100% bg-gray-200 rounded-full h-4"> 
+      <div className="bg-gray-200 rounded-full h-4 w-100%"> 
         <div 
           className="rounded-full h-full transition-all duration-500"
           style={{
-                  width: `${progress}%`,
-                  background: color,
+                  width: `${props.progress}%`,
+                  background: (props.type == "xp" ? xpcolors[props.level] : getHpColor()),
                 }}
         ></div>
       </div>
-      {/* Remove later */}
-      <button className="bg-red-100" onClick={updateProgress}>Change</button>
     </div>
   )
 }
