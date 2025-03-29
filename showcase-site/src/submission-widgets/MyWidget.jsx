@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { TiHeartFullOutline } from "react-icons/ti";
+import { TiStarFullOutline } from "react-icons/ti";
 
 const MyWidget = () => {
+  const [level, setLevel] = useState(0)
   const [habits, setHabits] = useState(["Test Habit"])
 
   //Tracks the habit that is currently being edited (null if none are being edited)
@@ -25,13 +28,20 @@ const MyWidget = () => {
     setHabits(newHabits)
   }
 
+  const levelUp = () => {
+    if (level < 10) {
+      setLevel(level+1);
+    } else {
+      setLevel(0);
+    }
+  }
+
   return (
     <div className="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg">
       <div className="text-center space-y-4">
         <h2 className="text-xl font-bold text-gray-800">Our habit tracker</h2>
 
         <div className="text-2xl font-bold text-blue-600">
-          {text}
         </div>
 
         <div className="justify-center bg-white">
@@ -42,24 +52,39 @@ const MyWidget = () => {
           </div>
         </div>
       </div>
-      <ProgressBar type="hp" />
-      <ProgressBar type="xp" />
+      <ProgressBar type="hp" level={level} />
+      <ProgressBar type="xp" level={level} />
+      <p>Level: {level}</p>
+      <button className="bg-red-100" onClick={levelUp}>Increase level</button>
     </div>
   );
 };
 
 const ProgressBar = (props) => {
-  const colors = {
-    5: "darkred",
-    10: "firebrick",
-    20: "darkorange",
-    40: "orange",
-    60: "gold",
-    80: "olivedrab",
-    100: "limegreen",
+  const hpcolors = {
+    5: "#740000",
+    10: "#e24221",
+    25: "#f7921a",
+    37: "#fbb72a",
+    50: "#ffe13d",
+    70: "#bce444",
+    100: "#66e74e",
   }
+  const xpcolors = [
+    "#05003d",
+    "#261ca3",
+    "#4f0b99",
+    "#9d49ff",
+    "#d841ff",
+    "#ff4099",
+    "red", // Do some fancy gradients or something
+    "red",
+    "red",
+    "red",
+    "red",
+  ]
   const [progress, setProgress] = useState(0);
-  const [color, setColor] = useState("limegreen"); // Default xp bar colour
+  const [color, setColor] = useState("blue"); // Error
 
   const updateProgress = () => {
     // Modify if needed
@@ -73,19 +98,23 @@ const ProgressBar = (props) => {
 
     // Manages colour of hp bar
     if (props.type == 'hp') {
-      for (let i in colors) {
+      for (let i in hpcolors) {
         if (progress <= i) {
-          setColor(colors[i]);
+          setColor(hpcolors[i]);
           break
         }
       }
+    } else {
+      console.log(`level is ${props.level}`)
+      setColor(xpcolors[props.level]);
+      console.log(`set colour to ${color}`)
     }
   }
 
-
   return (
-    <div>
-      <div className="size-100% bg-gray-200 rounded-full h-4 block mt-4 mb-4"> 
+    <div className="block mt-4 mb-4">
+      {props.type == "hp" ? <TiHeartFullOutline /> : <TiStarFullOutline />}
+      <div className="size-100% bg-gray-200 rounded-full h-4"> 
         <div 
           className="rounded-full h-full transition-all duration-500"
           style={{
