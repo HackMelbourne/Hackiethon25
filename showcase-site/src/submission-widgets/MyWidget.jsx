@@ -23,14 +23,25 @@ const MyWidget = () => {
           </button>
         </div>
       </div>
-      <ProgressBar color="firebrick" />
-      <ProgressBar color="limegreen" />
+      <ProgressBar type="hp" />
+      <ProgressBar type="xp" />
     </div>
   );
 };
 
 const ProgressBar = (props) => {
+  // const colors = {
+  //   5: "darkred",
+  //   10: "firebrick",
+  //   20: "darkorange",
+  //   40: "orange",
+  //   60: "gold",
+  //   80: "olivedrab",
+  //   100: "limegreen",
+  // }
   const [progress, setProgress] = useState(0);
+  const [color, setColor] = useState("limegreen");
+
   const addProgress = () => {
     if (progress >= 90) {
       setProgress(100);
@@ -39,6 +50,18 @@ const ProgressBar = (props) => {
     }
   }
   const resetProgress = () => setProgress(0);
+
+
+  // if (props.type == 'hp') {
+  //   for (i in colors.keys) {
+  //     if (progress <= i) {
+  //       setColor(colors[i]);
+  //       alert(`Set color to ${color}.`)
+  //       break
+  //     }
+  //   }
+  // }
+
   return (
     <div>
       <div className="size-100% bg-gray-200 rounded-full h-4 block mt-4 mb-4"> 
@@ -46,7 +69,7 @@ const ProgressBar = (props) => {
           className="rounded-full h-full transition-all duration-500"
           style={{
                   width: `${progress}%`,
-                  background: props.color,
+                  background: color,
                 }}
         ></div>
       </div>
