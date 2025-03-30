@@ -1,6 +1,6 @@
 import React from 'react';
 import Lottie from 'lottie-react';
-import successCheck from '../assets/success.json';
+import successCheck from '../assets-momentum/success.json';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 

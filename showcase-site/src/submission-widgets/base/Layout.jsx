@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { motion } from "framer-motion";
-import logo from "../assets/momentum.png"
+import logo from "../assets-momentum/momentum.png"
 import React from "react";
 
 const Layout = () => {

@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router';
 import axios from 'axios';
 import { Typography, Button } from '@mui/material';
-import ThreeLivesImg from '../assets/plant-3-lives.png';
-import TwoLivesImg from '../assets/plant-2-lives.png';
-import OneLifeImg from '../assets/plant-1-lives.png';
-import NoLivesImg from '../assets/plant-0-lives.png';
+import ThreeLivesImg from '../assets-momentum/plant-3-lives.png';
+import TwoLivesImg from '../assets-momentum/plant-2-lives.png';
+import OneLifeImg from '../assets-momentum/plant-1-lives.png';
+import NoLivesImg from '../assets-momentum/plant-0-lives.png';
 import { motion } from 'framer-motion';
 
 const Menu = () => {
