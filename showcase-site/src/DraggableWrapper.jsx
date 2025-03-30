@@ -62,7 +62,8 @@ const DraggableWrapper = ({ children, type, itemData, moveType = 'clone' }) => {
                     fontSize: '10px',
                     border: '1px solid #cbd5e0',
                     borderBottom: 'none',
-                    boxShadow: '0 -1px 2px rgba(0,0,0,0.05)'
+                    boxShadow: '0 -1px 2px rgba(0,0,0,0.05)',
+                    maxHeight: '100px'
                 }}
             >
                 <span style={{ pointerEvents: 'none' }}>•••</span>
