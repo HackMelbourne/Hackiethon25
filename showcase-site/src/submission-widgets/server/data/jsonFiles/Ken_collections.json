@@ -1,0 +1,30 @@
+[
+  {
+    "nickname": "C_11",
+    "status": {
+      "count": 1,
+      "rarity": "common"
+    }
+  },
+  {
+    "nickname": "C_4",
+    "status": {
+      "count": 1,
+      "rarity": "common"
+    }
+  },
+  {
+    "nickname": "C_3",
+    "status": {
+      "count": 1,
+      "rarity": "common"
+    }
+  },
+  {
+    "nickname": "C_10",
+    "status": {
+      "count": 1,
+      "rarity": "common"
+    }
+  }
+]
