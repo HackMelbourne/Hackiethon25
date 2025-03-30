@@ -4,7 +4,7 @@ import { createJournalState } from './state/JournalState';
 import { createJournalContext } from './context/CreateJournalContext';
 import { createRoutes } from './routes/routes';
 
-const MyWidget = () => {
+const Momentum = () => {
   const journalState = createJournalState();
   const { JournalContext, useJournal } = createJournalContext(); 
 
@@ -15,4 +15,4 @@ const MyWidget = () => {
   return <div><RouterProvider router={router} /></div>;
 };
 
-export default MyWidget;
+export default Momentum;
