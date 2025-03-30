@@ -10,15 +10,15 @@ import { AddIcon, ArrowUpIcon, SettingsIcon, CopyIcon } from '@chakra-ui/icons';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // --- Asset Imports ---
-import blueIcon from './Assets/blueIcon.png';
-import darkIcon from './Assets/darkIcon.png';
-import midnightIcon from './Assets/midnightIcon.png';
-import tabBlue from './Assets/tabBlue.png';
-import tabBlueSelected from './Assets/tabBlueSelected.png';
-import tabDark from './Assets/tabDark.png';
-import tabDarkSelected from './Assets/tabDarkSelected.png';
-import tabMidnight from './Assets/tabMidnight.png';
-import tabMidnightSelected from './Assets/tabMidnightSelected.png';
+import blueIcon from './kiwi-assets/blueIcon.png';
+import darkIcon from './kiwi-assets/darkIcon.png';
+import midnightIcon from './kiwi-assets/midnightIcon.png';
+import tabBlue from './kiwi-assets/tabBlue.png';
+import tabBlueSelected from './kiwi-assets/tabBlueSelected.png';
+import tabDark from './kiwi-assets/tabDark.png';
+import tabDarkSelected from './kiwi-assets/tabDarkSelected.png';
+import tabMidnight from './kiwi-assets/tabMidnight.png';
+import tabMidnightSelected from './kiwi-assets/tabMidnightSelected.png';
 
 // --- Internal Widget Component Logic ---
 const KiwiWidgetInternal = () => {
