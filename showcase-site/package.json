@@ -7,7 +7,10 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "node src/submission-widgets/server/server.cjs",
+    "dev:server": "nodemon src/submission-widgets/server/server.cjs",
+    "dev:all": "concurrently \"npm run dev\" \"npm run dev:server\""
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -17,6 +20,8 @@
     "@tailwindcss/postcss": "^4.0.3",
     "@tailwindcss/vite": "^4.0.3",
     "axios": "^1.8.4",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
     "framer-motion": "^12.6.2",
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.474.0",
@@ -27,6 +32,7 @@
     "react-dom": "^18.3.1",
     "react-multi-carousel": "^2.8.5",
     "react-router-dom": "^7.4.1",
+    "react-timer-hook": "^4.0.5",
     "recharts": "^2.12.0"
   },
   "devDependencies": {
@@ -35,11 +41,13 @@
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.2",
     "eslint": "^9.17.0",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.16",
     "globals": "^15.14.0",
+    "nodemon": "^3.1.9",
     "postcss": "^8.5.1",
     "tailwindcss": "^4.0.3",
     "vite": "^6.0.5"
