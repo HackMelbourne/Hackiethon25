@@ -1,0 +1,28 @@
+.widget {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.widget-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.widget-left {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.widget-middle {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.widget-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}

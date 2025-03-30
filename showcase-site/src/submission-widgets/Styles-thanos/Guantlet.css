@@ -1,0 +1,6 @@
+.guantlet{
+    width: 200px;
+    margin: 20px;
+    position: relative;
+    object-fit: cover;
+}

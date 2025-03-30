@@ -1,0 +1,24 @@
+.task-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.task{
+    background-color: lightblue;
+    padding: 5px;
+    width: 200px;
+    height: 50px;
+    margin: 2px;
+}
+
+.task-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+.task-button{
+    background-color: lightgreen;
+    border-radius: 5px;
+}

@@ -1,0 +1,77 @@
+.stones-container {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.guantlet {
+    width: 200px;
+    position: relative;
+    z-index: 1;
+}
+
+.stone {
+    position: absolute;
+    object-fit: contain;
+    z-index: 2;
+}
+
+.red {
+    width: 40px;
+    top: 61px;
+    left: 105px;
+}
+
+.green {
+    width: 40px;
+    top: 70px;
+    left: 82px;
+}
+
+.blue {
+    width: 40px;
+    top: 60px;
+    left: 138px;
+}
+
+.orange {
+    width: 40px;
+    top: 60px;
+    left: 163px;
+}
+
+.purple {
+    width: 80px;
+    top: 85px;
+    left: 102px;
+}
+
+.yellow {
+    width: 40px;
+    top: 140px;
+    left: 207px;
+    transform: rotate(30deg);
+}
+
+.big {
+    width: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+.dance-gif {
+    display: block;
+    position: fixed;
+    width: 500px;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100029;
+    pointer-events: none;
+}

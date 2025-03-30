@@ -1,0 +1,4 @@
+.task-manager{
+    display: flex;
+    justify-content: space-between;
+}
