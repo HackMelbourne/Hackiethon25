@@ -1,19 +1,19 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 // 이미지를 상대 경로로 import
-import grassImage from "./resources/grass_small.jpeg";
-import uncheckIcon from './resources/black_pocketball.png';
-import checkIcon from './resources/Pokemonball.png';
-import accomplishSound from './resources/accomplish.mp3'; // 체크 시 소리
-import backSound from './resources/back.mp3'; // 체크 해제 시 소리
-import addedSound from './resources/added.mp3';
-import removeSound from './resources/remove.mp3';
-import logoImage from './resources/Logo.png';
-import pokedoneSound from './resources/pokedone.mp3'; // 박수 소리에서 변경
-import pokesmileImage from './resources/pokesmile.gif';
-import speakerIcon from './resources/speaekr.png'; // 음량 켜짐 아이콘
-import speakerMuteIcon from './resources/speaker_no.png'; // 음량 꺼짐 아이콘
-import resetSound from './resources/reset.mp3'; // 초기화 소리 추가
+import grassImage from "./pokemeres/grass_small.jpeg";
+import uncheckIcon from './pokemeres/black_pocketball.png';
+import checkIcon from './pokemeres/Pokemonball.png';
+import accomplishSound from './pokemeres/accomplish.mp3'; // 체크 시 소리
+import backSound from './pokemeres/back.mp3'; // 체크 해제 시 소리
+import addedSound from './pokemeres/added.mp3';
+import removeSound from './pokemeres/remove.mp3';
+import logoImage from './pokemeres/Logo.png';
+import pokedoneSound from './pokemeres/pokedone.mp3'; // 박수 소리에서 변경
+import pokesmileImage from './pokemeres/pokesmile.gif';
+import speakerIcon from './pokemeres/speaekr.png'; // 음량 켜짐 아이콘
+import speakerMuteIcon from './pokemeres/speaker_no.png'; // 음량 꺼짐 아이콘
+import resetSound from './pokemeres/reset.mp3'; // 초기화 소리 추가
 
 const PokeMe = () => {
   const [inputValue, setInputValue] = useState('');
