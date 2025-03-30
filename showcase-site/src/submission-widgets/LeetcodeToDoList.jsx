@@ -1,10 +1,10 @@
 // By: Collin Teo and Matthew Leong
 import React, { useState } from 'react';
-//import problems from "./leetcode_data.json"
+import problems from "./leetcode_data.json"
 
 const LeetCodeToDoList = () => {
     {/* REWARD SYSTEMS*/}
-    const[points,setPoints]=useState();
+    const[points,setPoints]=useState(0);
     {/* RGB sliders*/}
     const[red,setRed]=useState(255);
     const[green,setGreen]=useState(255);
