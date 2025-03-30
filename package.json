@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "@chakra-ui/icons": "^2.2.4",
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@google/generative-ai": "^0.24.0",
+    "framer-motion": "^12.6.2",
+    "react-draggable": "^4.4.6",
+    "react-icons": "^5.5.0",
+    "react-resizable": "^3.0.5",
+    "react-rnd": "^10.5.2"
+  }
+}

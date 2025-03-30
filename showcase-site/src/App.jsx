@@ -2,6 +2,7 @@ import './App.css'
 import Navbar from './navbar'
 import Dropdown from './Dropdown'
 import DropZone from './Dropzone'
+import KiwiWidget from './submission-widgets/KiwiWidget';
 
 function App() {
 
